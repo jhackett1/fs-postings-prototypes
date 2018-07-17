@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Fast Stream Postings
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Fast Stream postings
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>These are prototypes of the Fast Stream postings app being developed by DDaT fast streamers.</p>
+      <h2 class="govuk-heading-l">Available journeys</h2>
+      <p>Prospective activity managers will be able to submit a posting for cohort leaders to approve.</p>
+      <a class="govuk-button govuk-button--start" href="/submit-posting">Submit a new posting</a>
+      <p>Cohort leaders can approve submitted postings and make them visible to fast streamers.</p>
+      <a class="govuk-button govuk-button--start" href="/approve-posting">Approve a submitted posting</a>
+      <p>Fast streamers will be able to review their posting for the benefit of other fast streamers.</p>
+      <a class="govuk-button govuk-button--start" href="/review-posting">Review a posting</a>
+    </div>
+</div>
+
+{% endblock %}

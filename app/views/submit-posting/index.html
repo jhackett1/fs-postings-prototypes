@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Submit a new posting | Fast Stream postings
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    "homepageUrl": "/",
+    serviceName: serviceName,
+    "containerClasses": "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Submit a new posting</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Submit a new posting
+      </h1>
+
+      <p>Use this service to request a fast streamer to be placed in your organisation.
+
+      <p>You do this by submitting information about a <strong>posting</strong> - the role the fast streamer will be performing.</p>
+
+      <p>
+        <a href="#" class="govuk-button govuk-button--start" role="button">Start now</a>
+      </p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You'll need detailed information about the fast streamer's posting.</p>
+
+      <p>You should <a href="#">review the guidance</a> for submitting a new posting, if you haven't already.</p>
+
+      <p>You'll also need the details of a point of contact we can contact regarding this submission if we have questions.</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">Related content</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li><a href="https://www.faststream.gov.uk/faqs/">About the Civil Service Fast Stream</a></li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
