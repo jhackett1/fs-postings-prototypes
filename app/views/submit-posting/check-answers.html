@@ -125,23 +125,24 @@
       </h2>
 
       <dl class="app-check-your-answers app-check-your-answers--short">
+
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Region
+            Building or street
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data["region"] }}
+            {{ data["address"] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="/submit-posting/posting-3">
-              Change<span class="govuk-visually-hidden"> previous application number</span>
+              Change<span class="govuk-visually-hidden"> home address</span>
             </a>
           </dd>
         </div>
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Nearest city or town
+            Town or city
           </dt>
           <dd class="app-check-your-answers__answer">
             {{ data["city"] }}
@@ -155,17 +156,32 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Office address
+            County
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data["office-address"] }}
+            {{ data["county"] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="/submit-posting/posting-3">
-              Change<span class="govuk-visually-hidden"> home address</span>
+              Change<span class="govuk-visually-hidden"> previous application number</span>
             </a>
           </dd>
         </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Postcode
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["postcode"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-3">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+
       </dl>
 
 
@@ -288,7 +304,7 @@
 
       <h2 class="govuk-heading-m">Now submit the posting</h2>
 
-      <p>
+      <p class="govuk-!-width-two-thirds">
         By submitting this posting, you are confirming that your organisation wishes to host a fast streamer in the role you've described.</p>
       </p>
 
