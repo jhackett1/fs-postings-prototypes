@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/submit-posting/posting-2">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Where is the posting?</h1>
+
+      <form class="form" action="/submit-posting/posting-4" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="region">
+            Region
+          </label>
+          <select class="govuk-select govuk-input--width-20" id="region" name="region" type="text" aria-describedby="region-hint">
+            <option value="" selected=""></option>
+            <option {{ checked("region", "Greater London") }} value="Greater London">Greater London</option>
+            <option {{ checked("region", "South East") }} value="South East">South East</option>
+            <option {{ checked("region", "South West") }} value="South West">South West</option>
+            <option {{ checked("region", "North East") }} value="North East">North East</option>
+            <option {{ checked("region", "Yorkshire and the Humber") }} value="Yorkshire and the Humber">Yorkshire and the Humber</option>
+            <option {{ checked("region", "East of England") }} value="East of England">East of England</option>
+            <option {{ checked("region", "East Midlands") }} value="East Midlands">East Midlands</option>
+            <option {{ checked("region", "West Midlands") }} value="West Midlands">West Midlands</option>
+            <option {{ checked("region", "Scotland") }} value="Scotland">Scotland</option>
+            <option {{ checked("region", "Wales") }} value="Wales">Wales</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="role-title">
+            Nearest city or town
+          </label>
+          <input value="{{ data['city'] }}" class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="office-address">
+            Office address
+          </label>
+          <span id="office-address-hint" class="govuk-hint">
+            Make sure you provide a postcode
+          </span>
+          <textarea class="govuk-textarea" id="office-address" name="office-address" rows="5" aria-describedby="office-address-hint"></textarea>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

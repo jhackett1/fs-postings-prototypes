@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/submit-posting/posting-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">About the posting</h1>
+
+      <form class="form" action="/submit-posting/posting-3" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="role-title">
+            Role title
+          </label>
+          <input value="{{ data['role-title'] }}" class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="dept">
+            Department
+          </label>
+          <select class="govuk-select govuk-input--width-20" id="dept" name="dept" type="text" aria-describedby="dept-hint">
+            <option value=""></option>
+            <option {{ checked("dept", "Department of Mysteries") }} value="Department of Mysteries">Department of Mysteries</option>
+            <option {{ checked("dept", "Ministry of Peace") }} value="Ministry of Peace">Ministry of Peace</option>
+            <option {{ checked("dept", "Ministry of Plenty") }} value="Ministry of Plenty">Ministry of Plenty</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="dept-area">
+            Department area or directorate
+          </label>
+          <input  value="{{ data['dept-area'] }}"class="govuk-input govuk-input--width-20" id="dept-area" name="dept-area" type="text" aria-describedby="dept-area-hint">
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/submit-posting/posting-3">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Does the posting have any specialist requirements?</h1>
+
+      <form class="form" action="/submit-posting/check-answers" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="security-clearance">
+            Security clearence needed
+          </label>
+          <select class="govuk-select govuk-input--width-20" id="security-clearance" name="security-clearance" type="text" aria-describedby="security-clearance-hint">
+            <option value="" selected=""></option>
+            <option value="Baseline">Baseline</option>
+            <option value="CTC">CTC</option>
+            <option value="SC">SC</option>
+            <option value="None needed">None needed</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="role-title">
+            Travel requirements
+          </label>
+          <span id="office-address-hint" class="govuk-hint">
+            Will the role holder be required to travel?
+          </span>
+          <input class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="office-address">
+            Language requirements
+          </label>
+          <span id="office-address-hint" class="govuk-hint">
+            Does the role need any specialist language skills?
+          </span>
+          <input class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
