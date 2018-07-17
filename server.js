@@ -159,6 +159,8 @@ if (useAutoStoreData === 'true') {
   app.use(utils.autoStoreData)
   utils.addCheckedFunction(nunjucksAppEnv)
   utils.addCheckedFunction(nunjucksDocumentationEnv)
+  utils.addSelectedFunction(nunjucksAppEnv)
+  utils.addSelectedFunction(nunjucksDocumentationEnv)  
 }
 
 // Clear all data in session if you open /prototype-admin/clear-data

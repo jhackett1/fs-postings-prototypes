@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Submit a new posting
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,9 +30,9 @@
           </label>
           <select class="govuk-select govuk-input--width-20" id="dept" name="dept" type="text" aria-describedby="dept-hint">
             <option value=""></option>
-            <option {{ checked("dept", "Department of Mysteries") }} value="Department of Mysteries">Department of Mysteries</option>
-            <option {{ checked("dept", "Ministry of Peace") }} value="Ministry of Peace">Ministry of Peace</option>
-            <option {{ checked("dept", "Ministry of Plenty") }} value="Ministry of Plenty">Ministry of Plenty</option>
+            <option {{ selected("dept", "Department of Mysteries") }} value="Department of Mysteries">Department of Mysteries</option>
+            <option {{ selected("dept", "Ministry of Peace") }} value="Ministry of Peace">Ministry of Peace</option>
+            <option {{ selected("dept", "Ministry of Plenty") }} value="Ministry of Plenty">Ministry of Plenty</option>
           </select>
         </div>
 

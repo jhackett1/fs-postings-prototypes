@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Submit a new posting
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,24 +23,24 @@
           </label>
           <select class="govuk-select govuk-input--width-20" id="region" name="region" type="text" aria-describedby="region-hint">
             <option value="" selected=""></option>
-            <option {{ checked("region", "Greater London") }} value="Greater London">Greater London</option>
-            <option {{ checked("region", "South East") }} value="South East">South East</option>
-            <option {{ checked("region", "South West") }} value="South West">South West</option>
-            <option {{ checked("region", "North East") }} value="North East">North East</option>
-            <option {{ checked("region", "Yorkshire and the Humber") }} value="Yorkshire and the Humber">Yorkshire and the Humber</option>
-            <option {{ checked("region", "East of England") }} value="East of England">East of England</option>
-            <option {{ checked("region", "East Midlands") }} value="East Midlands">East Midlands</option>
-            <option {{ checked("region", "West Midlands") }} value="West Midlands">West Midlands</option>
-            <option {{ checked("region", "Scotland") }} value="Scotland">Scotland</option>
-            <option {{ checked("region", "Wales") }} value="Wales">Wales</option>
+            <option {{ selected("region", "Greater London") }} value="Greater London">Greater London</option>
+            <option {{ selected("region", "South East") }} value="South East">South East</option>
+            <option {{ selected("region", "South West") }} value="South West">South West</option>
+            <option {{ selected("region", "North East") }} value="North East">North East</option>
+            <option {{ selected("region", "Yorkshire and the Humber") }} value="Yorkshire and the Humber">Yorkshire and the Humber</option>
+            <option {{ selected("region", "East of England") }} value="East of England">East of England</option>
+            <option {{ selected("region", "East Midlands") }} value="East Midlands">East Midlands</option>
+            <option {{ selected("region", "West Midlands") }} value="West Midlands">West Midlands</option>
+            <option {{ selected("region", "Scotland") }} value="Scotland">Scotland</option>
+            <option {{ selected("region", "Wales") }} value="Wales">Wales</option>
           </select>
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="role-title">
+          <label class="govuk-label" for="city">
             Nearest city or town
           </label>
-          <input value="{{ data['city'] }}" class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+          <input value="{{ data['city'] }}" class="govuk-input govuk-input--width-20" id="city" name="city" type="text" aria-describedby="city-hint">
         </div>
 
         <div class="govuk-form-group">
@@ -50,7 +50,7 @@
           <span id="office-address-hint" class="govuk-hint">
             Make sure you provide a postcode
           </span>
-          <textarea class="govuk-textarea" id="office-address" name="office-address" rows="5" aria-describedby="office-address-hint"></textarea>
+          <textarea class="govuk-textarea" id="office-address" name="office-address" rows="5" aria-describedby="office-address-hint">{{ data['office-address'] }}</textarea>
         </div>
 
         <button class="govuk-button">Continue</button>

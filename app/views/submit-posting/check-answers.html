@@ -1,19 +1,19 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers
+  Submit a new posting
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/submit-posting/posting-4">Back</a>
+  <a class="govuk-back-link" href="/submit-posting/posting-5">Back</a>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-govuk-grid-row">
     <div class="govuk-grid-govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Check your answers before submitting the posting
+      <h1 class="govuk-heading-xl">
+        Review posting details
       </h1>
 
       <!-- only add a heading for a list if there is more than one list -->
@@ -34,7 +34,7 @@
             {{ data["am-name"] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="/submit-posting/posting-2">
+            <a href="/submit-posting/activity-manager">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
@@ -48,7 +48,7 @@
             {{ data["am-grade"] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="/submit-posting/posting-2">
+            <a href="/submit-posting/activity-manager">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
@@ -62,7 +62,7 @@
             {{ data["am-email"] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="/submit-posting/posting-2">
+            <a href="/submit-posting/activity-manager">
               Change<span class="govuk-visually-hidden"> home address</span>
             </a>
           </dd>
@@ -72,7 +72,7 @@
 
 
       <h2 class="govuk-heading-m">
-        Basic posting details
+        Basic details
       </h2>
 
       <dl class="app-check-your-answers app-check-your-answers--short">
@@ -120,10 +120,176 @@
       </dl>
 
 
+      <h2 class="govuk-heading-m">
+        Location
+      </h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Region
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["region"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-3">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Nearest city or town
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["city"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-3">
+              Change<span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Office address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["office-address"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-3">
+              Change<span class="govuk-visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Skills
+      </h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Main skill
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["main-skill"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-4">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Second skill
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["second-skill"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-4">
+              Change<span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            General skill
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["generalist-skill"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-4">
+              Change<span class="govuk-visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">
+        Special requirements
+      </h2>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Security clearance
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["security-clearance"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-5">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Travel
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["travel"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-5">
+              Change<span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Language
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["language"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-5">
+              Change<span class="govuk-visually-hidden"> home address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Start date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data["start-date"] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="/submit-posting/posting-6">
+              Change<span class="govuk-visually-hidden"> previous application number</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
       <h2 class="govuk-heading-m">Now submit the posting</h2>
 
       <p>
-        By submitting this posting, you are confirming that your organisation wishes to host a fast streamer in the described role.</p>
+        By submitting this posting, you are confirming that your organisation wishes to host a fast streamer in the role you've described.</p>
       </p>
 
       <a class="govuk-button" href="confirmed" role="button">

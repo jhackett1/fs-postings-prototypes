@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Submit a new posting
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,41 +13,53 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Does the posting have any specialist requirements?</h1>
+      <h1 class="govuk-heading-xl">What skills does the posting develop?</h1>
 
-      <form class="form" action="/submit-posting/check-answers" method="post">
+      <p>Fast stream postings should encourage the learning and practice of new skills.</p>
+
+      <form class="form" action="/submit-posting/posting-5" method="post">
+
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="security-clearance">
-            Security clearence needed
+          <label class="govuk-label" for="main-skill">
+            Main skill
           </label>
-          <select class="govuk-select govuk-input--width-20" id="security-clearance" name="security-clearance" type="text" aria-describedby="security-clearance-hint">
+          <span id="main-skill-hint" class="govuk-hint">
+            Which skill will the fast streamer need to rely on most?
+          </span>
+          <select class="govuk-select govuk-input--width-20" id="main-skill" name="main-skill" type="text" aria-describedby="main-skill-hint">
             <option value="" selected=""></option>
-            <option value="Baseline">Baseline</option>
-            <option value="CTC">CTC</option>
-            <option value="SC">SC</option>
-            <option value="None needed">None needed</option>
+            <option {{ selected("main-skill", "Juggling") }} value="Juggling">Juggling</option>
+            <option {{ selected("main-skill", "User research") }} value="User research">User research</option>
+            <option {{ selected("main-skill", "Magic") }} value="Magic">Magic</option>
           </select>
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="role-title">
-            Travel requirements
+          <label class="govuk-label" for="second-skill">
+            Second skill
           </label>
-          <span id="office-address-hint" class="govuk-hint">
-            Will the role holder be required to travel?
-          </span>
-          <input class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+          <select class="govuk-select govuk-input--width-20" id="second-skill" name="second-skill" type="text" aria-describedby="second-skill-hint">
+            <option value="" selected=""></option>
+            <option {{ selected("second-skill", "Juggling") }} value="Juggling">Juggling</option>
+            <option {{ selected("second-skill", "User research") }} value="User research">User research</option>
+            <option {{ selected("second-skill", "Magic") }} value="Magic">Magic</option>
+          </select>
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="office-address">
-            Language requirements
+          <label class="govuk-label" for="generalist-skill">
+            Generalist skill
           </label>
-          <span id="office-address-hint" class="govuk-hint">
-            Does the role need any specialist language skills?
+          <span id="main-skill-hint" class="govuk-hint">
+            Which non-digital skill will the role holder need to rely on most?
           </span>
-          <input class="govuk-input govuk-input--width-20" id="role-title" name="role-title" type="text" aria-describedby="role-title-hint">
+          <select class="govuk-select govuk-input--width-20" id="generalist-skill" name="generalist-skill" type="text" aria-describedby="generalist-skill-hint">
+            <option value="" selected=""></option>
+            <option {{ selected("generalist-skill", "Juggling") }} value="Juggling">Juggling</option>
+            <option {{ selected("generalist-skill", "User research") }} value="User research">User research</option>
+            <option {{ selected("generalist-skill", "Magic") }} value="Magic">Magic</option>
+          </select>
         </div>
 
         <button class="govuk-button">Continue</button>

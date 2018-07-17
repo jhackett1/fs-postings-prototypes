@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Submit a new posting
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/submit-posting/posting-5">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/submit-posting/check-answers" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="start-date-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  When would you like the posting to begin?
+                </h1>
+              </legend>
+              <span id="start-date-hint" class="govuk-hint">
+                Select all suitable start dates. Postings normally begin around the first day of the month.
+              </span>
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="start-date-1" name="start-date" type="checkbox" value="April 2018" {{ checked("start-date", "April 2018") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="start-date-1">
+                  April 2018
+                </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="start-date-2" name="start-date" type="checkbox" value="May 2018" {{ checked("start-date", "May 2018") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="start-date-2">
+                  May 2018
+                </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

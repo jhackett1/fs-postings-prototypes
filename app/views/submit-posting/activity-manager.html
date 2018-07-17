@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Submit a new posting
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,7 +30,13 @@
           <label class="govuk-label" for="am-grade">
             Civil service grade
           </label>
-          <input value="{{ data['am-grade'] }}" class="govuk-input govuk-input--width-5" id="am-grade" name="am-grade" type="text" aria-describedby="am-grade-hint">
+          <select class="govuk-select govuk-input--width-5" id="am-grade" name="am-grade"  aria-describedby="am-grade-hint">
+            <option {{ selected("am-grade", "") }} value=""></option>
+            <option {{ selected("am-grade", "7") }} value="7">7</option>
+            <option {{ selected("am-grade", "6") }} value="6">6</option>
+            <option {{ selected("am-grade", "HEO") }} value="HEO">HEO</option>
+            <option {{ selected("am-grade", "SEO") }} value="SEO">SEO</option>
+          </select>
         </div>
 
         <div class="govuk-form-group">

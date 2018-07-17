@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Submit a new posting
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/submit-posting/posting-4">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Does the posting have any specialist requirements?</h1>
+
+      <form class="form" action="/submit-posting/posting-6" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="security-clearance">
+            Security clearence needed
+          </label>
+          <select class="govuk-select govuk-input--width-20" id="security-clearance" name="security-clearance" type="text" aria-describedby="security-clearance-hint">
+            <option {{ selected("security-clearance", "") }} value=""></option>
+            <option {{ selected("security-clearance", "Baseline") }} value="Baseline">Baseline</option>
+            <option {{ selected("security-clearance", "CTC") }} value="CTC">CTC</option>
+            <option {{ selected("security-clearance", "SC") }} value="SC">SC</option>
+            <option {{ selected("security-clearance", "None needed") }} value="None needed">None needed</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="travel">
+            Travel requirements
+          </label>
+          <span id="travel-hint" class="govuk-hint">
+            Will the role holder be required to travel?
+          </span>
+          <input value="{{ data['travel'] }}" class="govuk-input govuk-input--width-20" id="travel" name="travel" type="text" aria-describedby="travel-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="language">
+            Language requirements
+          </label>
+          <span id="language-hint" class="govuk-hint">
+            Does the role need any specialist language skills?
+          </span>
+          <input value="{{ data['language'] }}" class="govuk-input govuk-input--width-20" id="language" name="language" type="text" aria-describedby="language-hint">
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
